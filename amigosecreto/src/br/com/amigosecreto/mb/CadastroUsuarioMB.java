@@ -1,11 +1,15 @@
 package br.com.amigosecreto.mb;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import br.com.amigosecreto.dao.UsuarioDao;
 import br.com.amigosecreto.entity.Usuario;
 
+@SessionScoped
+@ManagedBean
 public class CadastroUsuarioMB {
 
 	private Usuario usuario;
