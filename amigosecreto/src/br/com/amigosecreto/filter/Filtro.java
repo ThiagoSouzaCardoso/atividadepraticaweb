@@ -35,7 +35,7 @@ public class Filtro implements Filter{
 					(Usuario)session.getAttribute("usuario_sessao"); 
 			if(usuario == null){
 				((HttpServletResponse)response).
-				      sendRedirect("/AplicacaoServletJsp/login.jsp");
+				      sendRedirect("/amigosecreto/acesso.jsf");
 			}
 			else {
 				chain.doFilter(request, response);
