@@ -10,17 +10,15 @@ public class CadastroUsuarioMB {
 
 	private Usuario usuario;
 
-	public void cadastrarUsuario(Usuario usuario){
-	
+	public void cadastrarUsuario(Usuario usuario) {
+
 		UsuarioDao dao = new UsuarioDao();
 		dao.adicionar(usuario);
-		
+
 		FacesMessage fm = new FacesMessage("Usuário cadastrado!");
 		FacesContext.getCurrentInstance().addMessage("Cadastro", fm);
 	}
-	
-	
-	
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -28,6 +26,5 @@ public class CadastroUsuarioMB {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	
+
 }
