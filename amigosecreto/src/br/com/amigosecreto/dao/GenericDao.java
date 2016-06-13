@@ -59,6 +59,17 @@ public class GenericDao<T> implements Dao<T> {
 		em.close();
 
 		return entidade;
+	}
+
+	@Override
+	public T atualizar(T entidade) {
+		em = JpaUtil.getEntityManager();
+		em.getTransaction().begin();
+		T t = em.merge(entidade);
+		em.getTransaction().commit();
+		em.close();
+		
+		return t;
 	}	
 
 }
