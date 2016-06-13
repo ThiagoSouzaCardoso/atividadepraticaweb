@@ -16,12 +16,12 @@
     <div class="conteudo">
         <h:form class="acesso">
           <h:outputLabel for="usuario" class="fl">Usuario</h:outputLabel>
-          <h:inputText type="text" id="usuario" name="usuario" value="" class="mb2"></h:inputText>
+          <h:inputText type="text" id="usuario" name="usuario" value="#{loginMB.login}" class="mb2"></h:inputText>
           <br></br>
           <h:outputLabel for="senha" class="fl">Senha</h:outputLabel>
-          <h:inputSecret type="password" id="senha" name="senha" value="" class="mb2"></h:inputSecret>
+          <h:inputSecret type="password" id="senha" name="senha" value="#{loginMB.senha}" class="mb2"></h:inputSecret>
           <br></br>
-          <h:commandButton value="Acessar" class="btnAcao"></h:commandButton>
+          <h:commandButton value="Acessar" class="btnAcao" action="#{loginMB.autenticar}"></h:commandButton>
           <h:commandButton value="Cadastro" class="btnAcao"></h:commandButton>
       	</h:form>
     </div>

@@ -28,16 +28,12 @@ public class Filtro implements Filter{
 
 		public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 			
-			HttpSession session = 
-					((HttpServletRequest)request).getSession();
-			
-			Usuario usuario = 
-					(Usuario)session.getAttribute("usuario_sessao"); 
-			if(usuario == null){
-				((HttpServletResponse)response).
-				      sendRedirect("/AplicacaoServletJsp/login.jsp");
-			}
-			else {
+			HttpServletRequest req = (HttpServletRequest) request;
+			HttpSession session = req.getSession();
+			Usuario usuario = (Usuario) session.getAttribute("usuario_logado");
+			if (usuario == null) {
+				request.getRequestDispatcher("../acesso.jsf").forward(request, response);
+			} else {
 				chain.doFilter(request, response);
 			}
 		}
