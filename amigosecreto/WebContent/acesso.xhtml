@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+
+    <title>Acesso a MeuAmigo.com</title>
+    <h:outputStylesheet library="css" name="acesso.css"  />
+</h:head>
+<h:body>
+    <div class="cabecalho">
+        <h:outputLabel>Acesso MeuAmigo.com</h:outputLabel>
+    </div>
+    <div class="conteudo">
+        <h:form class="acesso">
+          <h:outputLabel for="usuario" class="fl">Usuario</h:outputLabel>
+          <h:inputText type="text" id="usuario" name="usuario" value="" class="mb2"></h:inputText>
+          <br></br>
+          <h:outputLabel for="senha" class="fl">Senha</h:outputLabel>
+          <h:inputSecret type="password" id="senha" name="senha" value="" class="mb2"></h:inputSecret>
+          <br></br>
+          <h:commandButton value="Acessar" class="btnAcao"></h:commandButton>
+          <h:commandButton value="Cadastro" class="btnAcao"></h:commandButton>
+      	</h:form>
+    </div>
+  </h:body>
+</html>

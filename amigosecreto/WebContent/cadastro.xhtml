@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <title>Cadastro MeuAmigo.com</title>
+    <h:outputStylesheet library="css" name="cadastro.css"  />
+</h:head>
+<h:body>
+    <div class="cabecalho">
+        <h:outputLabel>Cadastro MeuAmigo.com</h:outputLabel>
+    </div>
+    <div class="conteudo">
+      <h:form class="cadastro">
+        <h:outputLabel for="nome" class="fl">Nome</h:outputLabel>
+        <h:inputText type="text" id="nome" name="nome" value="" class="mb2"/>
+        <br/>
+        <h:outputLabel for="idade" class="fl">Idade</h:outputLabel>
+        <h:inputText type="text" id="idade" name="idade" value="" class="mb2"/>
+        <br/>
+        <h:outputLabel for="dtnasc" class="fl">Data Nascimento</h:outputLabel>
+        <h:inputText type="text" id="dtnasc" name="dtnasc" value="" class="mb2"/>
+        <br/>
+        <h:outputLabel for="cpf" class="fl">CPF</h:outputLabel>
+        <h:inputText type="text" id="cpf" name="cpf" value="" class="mb2"/>
+        <br/>
+        <h:outputLabel for="usuario" class="fl">Usuario</h:outputLabel>
+        <h:inputText type="text" id="usuario" name="usuario" value="" class="mb2"/>
+        <br/>
+        <h:outputLabel for="senha" class="fl">Senha</h:outputLabel>
+        <h:inputText type="password" id="senha" name="senha" value="" class="mb2"/>
+        <br/>
+        <h:commandButton value="Cadastrar" class="btnAcao"></h:commandButton>
+      </h:form>
+    </div>
+  </h:body>
+</html>
