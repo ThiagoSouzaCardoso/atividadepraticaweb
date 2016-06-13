@@ -25,6 +25,12 @@ public class Usuario implements Serializable {
 	@Column(name="id_usuario")
 	private Integer id;
 	
+	@Column(name="login")
+	private String login;
+	
+	@Column(name="senha")
+	private String senha;
+	
 	@Column(name="nome")
 	private String nome;
 	
@@ -76,7 +82,23 @@ public class Usuario implements Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+	public String getLogin() {
+		return login;
+	}
 
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
