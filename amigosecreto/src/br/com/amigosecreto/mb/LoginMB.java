@@ -35,12 +35,7 @@ public class LoginMB {
 				return "acesso?faces-redirect=true";
 			}
 		}
-		
-		public String logOFF(){
-			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-			
-			return "../acesso?faces-redirect=true";
-		}
+	
 		
 		public String getLogin() {
 			return login;

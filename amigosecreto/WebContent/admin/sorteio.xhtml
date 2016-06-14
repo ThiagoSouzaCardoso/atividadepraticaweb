@@ -20,7 +20,11 @@
           <br/>
           <h:outputLabel class="mb2">Seu amigo secreto é <h:outputText rendered="#{not empty sorteioMB.usuario.amigosSorteado}" value="#{sorteioMB.usuario.amigosSorteado.nome}"/></h:outputLabel>
        
-       	 <p:commandButton  name="Sair" value="Sair" action="#{login.logOFF) />
+       
+        </h:form>
+        <h:form class="sorteio">
+      		
+        	 <p:commandButton  value="Sair" action="#{sorteioMB.logOFF}" oncomplete="window.location.href='../acesso.jsf'"></p:commandButton>
         </h:form>
     </div>
   </h:body>

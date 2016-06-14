@@ -35,6 +35,14 @@ public class SorteioMB {
 
 	}
 
+	
+	public String logOFF(){
+		
+		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("usuario_logado");
+		
+		return "../acesso?faces-redirect=true";
+	}
+	
 	public Usuario getUsuario() {
 		return usuario;
 	}
