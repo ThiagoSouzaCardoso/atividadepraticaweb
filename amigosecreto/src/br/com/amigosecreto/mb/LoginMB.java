@@ -9,7 +9,6 @@ import javax.faces.context.FacesContext;
 
 import br.com.amigosecreto.dao.UsuarioDao;
 import br.com.amigosecreto.entity.Usuario;
-import javafx.util.converter.LocalDateStringConverter;
 
 @SessionScoped
 @ManagedBean
@@ -35,7 +34,13 @@ public class LoginMB {
 				return "acesso?faces-redirect=true";
 			}
 		}
-	
+
+		
+		public String cadastrar() {
+			return "cadastro";
+		}
+		
+
 		
 		public String getLogin() {
 			return login;

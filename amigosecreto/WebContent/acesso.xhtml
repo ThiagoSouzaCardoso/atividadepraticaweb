@@ -22,7 +22,7 @@
           <h:inputSecret type="password" id="senha" name="senha" value="#{loginMB.senha}" class="mb2"></h:inputSecret>
           <br></br>
           <h:commandButton value="Acessar" class="btnAcao" action="#{loginMB.autenticar}"></h:commandButton>
-          <h:commandButton value="Cadastro" class="btnAcao"></h:commandButton>
+          <h:commandButton value="Cadastro" class="btnAcao" action="#{loginMB.cadastrar}"></h:commandButton>
       	</h:form>
     </div>
   </h:body>
