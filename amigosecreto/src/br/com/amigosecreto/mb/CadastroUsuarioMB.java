@@ -13,14 +13,17 @@ import br.com.amigosecreto.entity.Usuario;
 public class CadastroUsuarioMB {
 
 	private Usuario usuario;
+	
+	public CadastroUsuarioMB() {
+		usuario = new Usuario();
+	}
 
-	public void cadastrarUsuario(Usuario usuario) {
-
+	public void cadastrarUsuario() {
 		UsuarioDao dao = new UsuarioDao();
 		dao.adicionar(usuario);
-
 		FacesMessage fm = new FacesMessage("Usuário cadastrado!");
 		FacesContext.getCurrentInstance().addMessage("Cadastro", fm);
+		this.usuario = new Usuario();
 	}
 
 	public Usuario getUsuario() {

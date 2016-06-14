@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" >
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
     <title>Cadastro MeuAmigo.com</title>
@@ -14,25 +15,23 @@
     </div>
     <div class="conteudo">
       <h:form class="cadastro">
+       <p:messages/>
         <h:outputLabel for="nome" class="fl">Nome</h:outputLabel>
-        <h:inputText type="text" id="nome" name="nome" value="" class="mb2"/>
-        <br/>
-        <h:outputLabel for="idade" class="fl">Idade</h:outputLabel>
-        <h:inputText type="text" id="idade" name="idade" value="" class="mb2"/>
+        <h:inputText type="text" id="nome" name="nome" value="#{cadastroUsuarioMB.usuario.nome}" class="mb2" required="true" requiredMessage="Nome Invalido"/>
         <br/>
         <h:outputLabel for="dtnasc" class="fl">Data Nascimento</h:outputLabel>
-        <h:inputText type="text" id="dtnasc" name="dtnasc" value="" class="mb2"/>
+        <p:calendar  value="#{cadastroUsuarioMB.usuario.dataNascimento}" name="dtnasc" id="dtnasc" required="true" requiredMessage="Data de Nascimento Invalido"/>
         <br/>
         <h:outputLabel for="cpf" class="fl">CPF</h:outputLabel>
-        <h:inputText type="text" id="cpf" name="cpf" value="" class="mb2"/>
+        <h:inputText type="text" id="cpf" name="cpf" value="#{cadastroUsuarioMB.usuario.cpf}" class="mb2" required="true" requiredMessage="CPF Invalido"/>
         <br/>
         <h:outputLabel for="usuario" class="fl">Usuario</h:outputLabel>
-        <h:inputText type="text" id="usuario" name="usuario" value="" class="mb2"/>
+        <h:inputText type="text" id="usuario" name="usuario" value="#{cadastroUsuarioMB.usuario.login}" class="mb2" required="true" requiredMessage="Login Invalido"/>
         <br/>
         <h:outputLabel for="senha" class="fl">Senha</h:outputLabel>
-        <h:inputText type="password" id="senha" name="senha" value="" class="mb2"/>
+        <h:inputText type="password" id="senha" name="senha" value="#{cadastroUsuarioMB.usuario.senha}" class="mb2" required="true" requiredMessage="Senha Invalido"/>
         <br/>
-        <h:commandButton value="Cadastrar" class="btnAcao"></h:commandButton>
+        <p:commandButton value="Cadastrar" action="#{cadastroUsuarioMB.cadastrarUsuario()}" update="@all" />
       </h:form>
     </div>
   </h:body>
