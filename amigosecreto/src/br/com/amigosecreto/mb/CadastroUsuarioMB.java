@@ -25,6 +25,10 @@ public class CadastroUsuarioMB {
 		FacesContext.getCurrentInstance().addMessage("Cadastro", fm);
 		this.usuario = new Usuario();
 	}
+	
+	public String voltarLogin(){
+		return "acesso?faces-redirect=true";
+	}
 
 	public Usuario getUsuario() {
 		return usuario;

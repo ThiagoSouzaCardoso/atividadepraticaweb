@@ -14,6 +14,10 @@
         <h:outputLabel>Cadastro MeuAmigo.com</h:outputLabel>
     </div>
     <div class="conteudo">
+   	   <h:form class="cadastro">
+   	          <h:commandButton type="submit" value="Voltar" class="btnAcao" action="#{cadastroUsuarioMB.voltarLogin()}"/>
+   	   </h:form>	
+   
       <h:form class="cadastro">
        <p:messages/>
         <h:outputLabel for="nome" class="fl">Nome</h:outputLabel>
@@ -33,6 +37,8 @@
         <br/>
         <p:commandButton value="Cadastrar" action="#{cadastroUsuarioMB.cadastrarUsuario()}" update="@all" />
       </h:form>
+      
+      
     </div>
   </h:body>
 </html>
