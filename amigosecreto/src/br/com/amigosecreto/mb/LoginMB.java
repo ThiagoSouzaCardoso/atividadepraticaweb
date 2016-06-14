@@ -9,6 +9,7 @@ import javax.faces.context.FacesContext;
 
 import br.com.amigosecreto.dao.UsuarioDao;
 import br.com.amigosecreto.entity.Usuario;
+import javafx.util.converter.LocalDateStringConverter;
 
 @SessionScoped
 @ManagedBean
@@ -29,12 +30,17 @@ public class LoginMB {
 			
 			if (usr != null) {
 				sessionMap.put("usuario_logado", usr);
-				return "admin/sorteio";
+				return "admin/sorteio?faces-redirect=true";
 			} else {
-				return "acesso";
+				return "acesso?faces-redirect=true";
 			}
 		}
 		
+		public String logOFF(){
+			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+			
+			return "../acesso?faces-redirect=true";
+		}
 		
 		public String getLogin() {
 			return login;
