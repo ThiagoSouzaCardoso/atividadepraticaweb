@@ -35,6 +35,10 @@ public class LoginMB {
 			}
 		}
 		
+		public String cadastrar() {
+			return "cadastro";
+		}
+		
 		
 		public String getLogin() {
 			return login;
