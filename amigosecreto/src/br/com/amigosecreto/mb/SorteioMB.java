@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -12,7 +13,7 @@ import javax.faces.context.FacesContext;
 import br.com.amigosecreto.dao.UsuarioDao;
 import br.com.amigosecreto.entity.Usuario;
 
-@SessionScoped
+@RequestScoped
 @ManagedBean
 public class SorteioMB {
 
@@ -30,8 +31,11 @@ public class SorteioMB {
 		Set<Usuario> amigos = dao.findAllFriendsSecret(usuario);
 		Optional<Usuario> usua = amigos.stream().findAny();
 		usuario.setAmigosSorteado(usua.get());
-
+		usua.get().setUtilizado(true);
 		usuario = dao.atualizar(usuario);
+		
+		dao.atualizar(usua.get());
+		
 
 	}
 

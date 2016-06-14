@@ -19,7 +19,7 @@ public class UsuarioDao extends GenericDao<Usuario> implements Dao<Usuario>{
 	public Set<Usuario> findAllFriendsSecret(Usuario usuario){
 		em = JpaUtil.getEntityManager();
 		em.getTransaction().begin();
-		String jpql = "from Usuario user where user.amigosSorteado is null and user.cpf <> :pCPF";
+		String jpql = "from Usuario user where user.cpf <> :pCPF and user.utilizado = false";
 		Query query = em.createQuery(jpql);
 		query.setParameter("pCPF", usuario.getCpf());
 		List<Usuario> resultList = query.getResultList();
@@ -36,16 +36,11 @@ public class UsuarioDao extends GenericDao<Usuario> implements Dao<Usuario>{
 		Query query = em.createQuery(jpql);
 		query.setParameter("pLogin", login);
 		query.setParameter("pSenha", senha);
-		try {
-			Usuario singleResult = (Usuario)query.getSingleResult();
-			return singleResult;
-		} catch (NoResultException e) {
-			return null;
-		}finally{
+		Usuario singleResult = (Usuario)query.getSingleResult();
+		
 		em.getTransaction().commit();
 		em.close();	
-		}
-		
+		 return singleResult != null ? singleResult: null;
 	}
 	
 }

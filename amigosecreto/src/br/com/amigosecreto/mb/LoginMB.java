@@ -3,6 +3,7 @@ package br.com.amigosecreto.mb;
 import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -10,7 +11,7 @@ import javax.faces.context.FacesContext;
 import br.com.amigosecreto.dao.UsuarioDao;
 import br.com.amigosecreto.entity.Usuario;
 
-@SessionScoped
+@RequestScoped
 @ManagedBean
 public class LoginMB {
 	
@@ -19,6 +20,7 @@ public class LoginMB {
 		private Map<String, Object> sessionMap;
 		
 		public LoginMB() {
+			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
 			sessionMap = externalContext.getSessionMap();
 		}
